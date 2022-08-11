@@ -1,0 +1,59 @@
+.banner{
+    background: $purple_darken;
+    color: white;
+
+    .buttons-group{
+        display: flex;
+        margin-top: 1.7rem;
+        .button + .button{
+            margin-left: 1rem;
+        }
+    }
+    .banner-text{
+        width: 60%;
+        p{
+            max-width: 450px;
+        }
+    }
+    .banner-ilustration{
+        position: relative;
+        width: 40%;
+        background: radial-gradient(circle, darken($purple, 20%) 0%, $purple_darken 64%);
+        img{
+            position: absolute;
+            &.businessman{    
+                top: 14px;
+                left: 46px;
+            }
+            &.burger{
+                top: -2px;
+                left: 23px;
+                z-index: 1;
+            }
+
+        }
+    }
+    @media (max-width: map-get($grid-breakpoints, "xl")){
+        h1{
+            font-size: 3rem;
+            line-height: 137.5%;
+        }
+        .banner-text{
+            p{
+                max-width: none;
+            }
+        }
+        .banner-text, .banner-ilustration{
+            width: 50%;
+        }
+    }
+    @media (max-width: map-get($grid-breakpoints, "lg")) {
+        .banner-ilustration{
+            height: 320px;
+            background: 0;
+        }
+        .banner-text, .banner-ilustration{
+            width: 100%;
+        }
+    }
+}

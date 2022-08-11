@@ -1,0 +1,18 @@
+@import "./colors.scss";
+@import "./variables.scss";
+@import "./font_poppins.scss";
+@import "./reboot.scss";
+@import "./typography.scss";
+@import "./App.scss";
+
+/* C O M P O N E N T S */
+
+@import "../components/Header/Header.scss";
+@import "../components/Logo/Logo.scss";
+@import "../components/Banner/Banner.scss";
+@import "../components/CarouselSection/CarouselSection.scss";
+@import "../components/ContactUs/ContactUs.scss";
+
+/* V E N D O R */
+
+@import "../../node_modules/swiper/swiper-bundle.css";

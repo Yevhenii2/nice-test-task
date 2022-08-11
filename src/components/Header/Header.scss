@@ -1,0 +1,105 @@
+header{
+    .fixed-header{
+        padding: 16px 0 20px 0;
+        position: fixed;
+        width: 100vw;
+        background-color: white;
+        z-index: 300;
+    }
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1218px;
+        margin: auto;
+        padding-inline: 12px;
+    }
+    .burger{
+        display: none;
+    }
+    .header-menu{
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        .header-contacts{
+            a{
+                margin-right: 23px;
+                img{
+                    height: 18px;
+                }
+                
+            }
+        }
+        .header-navigation{
+            width: 58%;
+            display: flex;
+            align-items: center;
+
+            a{
+                font-size: 14px;
+                margin-right: 106px;
+                color: inherit;
+                position: relative;
+                white-space: nowrap;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    transition: .3s;
+                    left: 50%;
+                    top: 100%;
+                    width: 0%;
+                    height: 2px;
+                    background-color: currentColor;
+                }
+                &:hover{
+                    &::after{
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: map-get($grid-breakpoints, "xl")) {
+        .header-menu{
+            .header-navigation{
+                width: unset;
+            }
+        }
+    }
+    @media (max-width: map-get($grid-breakpoints, "lg")) {
+        .header-menu{
+            .header-navigation{
+                transition: .5s;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                height: 0;
+                overflow: hidden;
+                display: block;
+                width: 100vw;
+                padding: 0 0;
+                a{
+                    display: block;
+                    margin: 0;
+                    padding: 8px 0;
+                    text-align: center;
+                }
+                &.open{
+                    // Hardcoded, sorry :(
+                    height: 127px;
+                    padding: 8px 0;
+                }
+            }
+        }
+        .logo{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .burger{
+            display: block;
+        }
+    }
+}

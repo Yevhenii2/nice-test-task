@@ -1,0 +1,100 @@
+h1{
+    font-size: 4rem;
+    line-height: 88px;
+    margin-block-end: 0.6rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.8rem;
+}
+
+p{
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
+    a {
+        text-decoration: underline;
+        font-weight: 600;
+    }
+}
+label{
+    color: $purple;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    transition: .3s;
+}
+input{
+    border: 1px solid $purple_lighten;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    transition: .3s;
+}
+
+.highlighted{
+    display: inline;
+    font-weight: 600;
+    &.yellow{
+        color: $yellow;
+    }
+    &.purple{
+        color: $purple;
+    }
+}
+// Everything bellow this line should be in different file. 
+.button{
+    border-radius: 8px;
+    border: 1px solid white;
+    text-align: center;
+    width: 186px;
+    height: 46px;
+    font-weight: 600;
+    color: white; 
+    transition: .5s;
+    &:hover{
+        background-color: white;
+        border-color: $purple_darken;
+        &, a{
+            color: $purple_darken;
+        }
+    }
+    a{
+        color: white; 
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+    }
+    &.filled{
+        border: 1px solid $yellow;
+        background-color: $yellow;
+        color: $purple_darken;
+        &:hover{
+            background-color: $purple_darken;
+            color: $yellow;
+            &, a{
+                color: $yellow;
+            }
+        }
+        a{
+            color: $purple_darken;
+        }
+    }
+}
+
+.delimeter{
+    height: 3px;
+    width: 97px;
+    background-color: $yellow;
+    @media (max-width: map-get($grid-breakpoints, "lg")) {
+        display: none;
+    }
+}
